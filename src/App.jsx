@@ -36,13 +36,19 @@ const App = () => {
 
   const [books, setBooks] = useState(data)
 
+
+  const addBook = (book) => {
+
+    setBooks([...books, book])
+
+  }
+
   return (
     <div>
-
       <Navbar />
       <Search />
-      <BookList  books={books}/>
-      <AddBookForm />
+      <BookList books={books} />
+      <AddBookForm addBook={addBook} />
     </div>
   )
 }
