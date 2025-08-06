@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Book from './Book'
 
 
-const BookList = ({ books }) => {
+const BookList = ({ books , deleteBook}) => {
 
 
   return (
@@ -10,7 +10,7 @@ const BookList = ({ books }) => {
       {
         books.map(book => (
 
-          <Book book={book} />
+          <Book deleteBook={deleteBook} key={book.id} book={book} />
 
         ))
       }

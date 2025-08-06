@@ -8,26 +8,32 @@ import { useState } from "react"
 
 const data = [
   {
+    id: 1,
     name: "The Great Gatsby",
     imageUrl: "https://picsum.photos/200/200?random=1"
   },
   {
+    id: 2,
     name: "To Kill a Mockingbird",
     imageUrl: "https://picsum.photos/200/200?random=2"
   },
   {
+    id: 3,
     name: "1984",
     imageUrl: "https://picsum.photos/200/200?random=3"
   },
   {
+    id: 4,
     name: "Pride and Prejudice",
     imageUrl: "https://picsum.photos/200/200?random=4"
   },
   {
+    id: 5,
     name: "Moby Dick",
     imageUrl: "https://picsum.photos/200/200?random=5"
   },
   {
+    id: 6,
     name: "War and Peace",
     imageUrl: "https://picsum.photos/200/200?random=6"
   }
@@ -43,11 +49,18 @@ const App = () => {
 
   }
 
+
+
+  const deleteBook = (id) => {
+    setBooks(books.filter((book) => book.id !== id))
+  }
+
+
   return (
     <div>
       <Navbar />
       <Search />
-      <BookList books={books} />
+      <BookList deleteBook={deleteBook} books={books} />
       <AddBookForm addBook={addBook} />
     </div>
   )
