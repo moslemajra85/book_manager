@@ -12,6 +12,10 @@ const AddBookForm = ({ addBook }) => {
 
   const handleAddBook = () => {
 
+    if(!bookTitle) {
+      return
+    }
+
     const book = {
 
 
@@ -25,6 +29,7 @@ const AddBookForm = ({ addBook }) => {
   return (
     <div className="addbook-form-container">
       <label htmlFor="title" className="addbook-form-label">Title:</label>
+
       <input value={bookTitle} onChange={handleInputChange} type="text" id="title" name="title" className="addbook-form-input" />
       <button onClick={handleAddBook} className="addbook-form-btn">Add Book</button>
     </div>
