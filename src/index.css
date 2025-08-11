@@ -260,3 +260,56 @@
   background: linear-gradient(90deg, #e67e22 0%, #f39c12 100%);
   box-shadow: 0 4px 16px rgba(243, 156, 18, 0.15);
 }
+
+/* Make UpdateBookForm fit nicely inside Book card */
+.book-card .updatebook-form-container {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 1rem 0 0 0;
+  padding: 1rem 0.5rem;
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+}
+
+.book-card .updatebook-form-label {
+  font-size: 1rem;
+  color: #2c3e50;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+}
+
+.book-card .updatebook-form-input {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.book-card .updatebook-form-input:focus {
+  border-color: #f39c12;
+  box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.1);
+}
+
+.book-card .updatebook-form-btn {
+  background: linear-gradient(90deg, #f39c12 0%, #e67e22 100%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(243, 156, 18, 0.08);
+}
+
+.book-card .updatebook-form-btn:hover {
+  background: linear-gradient(90deg, #e67e22 0%, #f39c12 100%);
+  box-shadow: 0 4px 16px rgba(243, 156, 18, 0.12);
+}

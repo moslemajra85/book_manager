@@ -5,12 +5,11 @@ import AddBookForm from "./components/AddBookForm"
 import UpdateBookForm from "./components/UpdateBookForm"
 import { useState } from "react"
 
-
 const data = [
   {
     id: 1,
     name: "The Great Gatsby",
-    imageUrl: "https://picsum.photos/200/200?random=1"
+    imageUrl: "https://picsum.photos/200/200?random=10"
   },
   {
     id: 2,
@@ -56,12 +55,27 @@ const App = () => {
   }
 
 
+  const updateBook = (id, title) => {
+
+    // Find the index of the book with the matching ID
+    const bookIndex = books.findIndex((book) => book.id === id);
+
+    if (bookIndex !== -1) {
+
+      setBooks(books.map((book) => book.id === id ? { ...book, name: title } : book))
+
+    }
+
+
+  }
+
+
   return (
     <div>
       <Navbar />
       <Search />
-      <BookList deleteBook={deleteBook} books={books} />
-      <AddBookForm addBook={addBook} />
+      <BookList deleteBook={deleteBook} books={books} updateBook={updateBook} />
+      <AddBookForm addBook={addBook} updateBook={updateBook} />
     </div>
   )
 }
