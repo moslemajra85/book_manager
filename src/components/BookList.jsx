@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
 import Book from './Book'
+import { BooksContext } from '../context/bookContext'
+import { useContext } from 'react'
 
+const BookList = () => {
 
-const BookList = ({ books, deleteBook, updateBook }) => {
+  const { books } = useContext(BooksContext)
 
 
   return (
@@ -10,7 +12,7 @@ const BookList = ({ books, deleteBook, updateBook }) => {
       {
         books.map(book => (
 
-          <Book updateBook={updateBook} deleteBook={deleteBook} key={book.id} book={book} />
+          <Book key={book.id} book={book} />
 
         ))
       }

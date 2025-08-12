@@ -1,8 +1,10 @@
-import React from 'react'
 import { useState } from 'react'
+import { useContext } from 'react'
+import { BooksContext } from '../context/bookContext'
 
-const UpdateBookForm = ({ updateBook, book, hideUpdateForm }) => {
+const UpdateBookForm = ({ book, hideUpdateForm }) => {
 
+  const { updateBook } = useContext(BooksContext)
   const [title, setTitlte] = useState(book.name)
 
 

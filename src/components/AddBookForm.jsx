@@ -1,7 +1,11 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { BooksContext } from "../context/bookContext"
 
-const AddBookForm = ({ addBook }) => {
 
+const AddBookForm = () => {
+
+
+  const { addBook } = useContext(BooksContext)
   const [bookTitle, setBookTitle] = useState('')
 
 
@@ -12,7 +16,7 @@ const AddBookForm = ({ addBook }) => {
 
   const handleAddBook = () => {
 
-    if(!bookTitle) {
+    if (!bookTitle) {
       return
     }
 

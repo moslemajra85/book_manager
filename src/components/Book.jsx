@@ -1,13 +1,16 @@
 import { useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
 import UpdateBookForm from './UpdateBookForm'
+import { useContext } from 'react'
+import { BooksContext } from '../context/bookContext'
 
-const Book = ({ book, deleteBook, updateBook }) => {
+const Book = ({ book }) => {
+
+    const { deleteBook } = useContext(BooksContext)
 
     const [isVisible, setIsVisible] = useState(false)
 
     const handleDeleteBook = (book) => {
-        console.log("Delete")
         deleteBook(book.id)
     }
 
@@ -25,7 +28,7 @@ const Book = ({ book, deleteBook, updateBook }) => {
             <h2 className="book-card-title">{book.name}</h2>
             {!isVisible ? <button onClick={() => setIsVisible(true)} className="book-card-btn">Update</button> : null}
             {
-                isVisible ? <UpdateBookForm updateBook={updateBook} book={book} hideUpdateForm={hideUpdateForm} /> : null
+                isVisible ? <UpdateBookForm  book={book} hideUpdateForm={hideUpdateForm} /> : null
             }
         </div>
     )
