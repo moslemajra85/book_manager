@@ -40,7 +40,14 @@ export const BooksProvider = ({ children }) => {
 
     }
 
-    return <BooksContext.Provider value={{ books, addBook, deleteBook, updateBook }}>
+    const searchBook = (query) => {
+
+        setBooks(data.filter((book) => book.name.toLowerCase().includes(query.toLowerCase())));
+
+
+    }
+
+    return <BooksContext.Provider value={{ books, addBook, deleteBook, updateBook, searchBook }}>
         {children}
     </BooksContext.Provider>
 
